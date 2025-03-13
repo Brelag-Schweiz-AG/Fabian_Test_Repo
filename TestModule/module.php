@@ -26,9 +26,9 @@
         
 
         public function RequestAction($Ident, $Value) {
-            switch($Ident){}
+            switch($Ident){
             case 'Switch':
-                ÄTHIS->SetValue($Ident, $Value);
+                $this->SetValue($Ident, $Value);
                 break;
             }
         }
