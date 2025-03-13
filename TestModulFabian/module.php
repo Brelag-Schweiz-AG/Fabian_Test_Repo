@@ -30,8 +30,10 @@ declare(strict_types=1);
 
 		public function RequestAction($Ident, $Value){
 			switch($Ident){
-				$this->SetValue($Ident, $Value);
-				break;
+				case('Switch'):
+					$this->SetValue($Ident, $Value);
+					break;
+			
 			}
 		}
 
