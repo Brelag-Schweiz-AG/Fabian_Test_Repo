@@ -14,8 +14,6 @@ declare(strict_types=1);
 			$this->SetVisualizationType(1);
 		}
 
-		
-
 		public function Destroy()
 		{
 			//Never delete this line!
@@ -30,10 +28,13 @@ declare(strict_types=1);
 
 		public function RequestAction($Ident, $Value){
 			switch($Ident){
-				case('Switch'):
+				case 'Switch':
 					$this->SetValue($Ident, $Value);
 					//Während der Laufzeit Parameter aktualiesieren
 					$this->UpdateVisualizationValue(json_encode($Value));
+					break;
+				case'Toggle':
+					$this->RequestAction('Switch', !$this->GetValue('Switch'));
 					break;
 			
 			}
@@ -41,7 +42,7 @@ declare(strict_types=1);
 
 		public function GetVisualizationTile(){
 			$htmlFile = file_get_contents(__DIR__.'/module.html');
-			$initialStatus = '<script>handleMessage("' . jason_encode($this->Getvalue);
-			return $htmlFile;
+			$initialStatus = '<script>handleMessage("' . jason_encode($this->GetValue);
+			return $htmlFile . $initialStatus;
 		}
 	}
