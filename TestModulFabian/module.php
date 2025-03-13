@@ -41,6 +41,7 @@ declare(strict_types=1);
 
 		public function GetVisualizationTile(){
 			$htmlFile = file_get_contents(__DIR__.'/module.html');
+			$initialStatus = '<script>handleMessage("' . jason_encode($this->Getvalue);
 			return $htmlFile;
 		}
 	}
