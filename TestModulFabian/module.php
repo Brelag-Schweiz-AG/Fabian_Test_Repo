@@ -32,6 +32,8 @@ declare(strict_types=1);
 			switch($Ident){
 				case('Switch'):
 					$this->SetValue($Ident, $Value);
+					//Während der Laufzeit Parameter aktualiesieren
+					$this->UpdateVisualizationValue(json_encode($Value));
 					break;
 			
 			}
