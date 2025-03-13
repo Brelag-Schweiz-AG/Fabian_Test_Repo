@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 			$this->RegisterVariableBoolean('Switch', 'Switch');
 			$this->EnableAction('Switch');
-			
+
 			$this->SetVisualizationType(1);
 		}
 
@@ -35,7 +35,7 @@ declare(strict_types=1);
 			}
 		}
 
-		public functin GetVisualizationTile(){
+		public function GetVisualizationTile(){
 			$htmlFile = file_get_contents(__DIR__.'/module.html');
 			return $htmlFile;
 		}
