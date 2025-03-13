@@ -1,5 +1,5 @@
 {
-	"id": "{E41B0744-9AB6-4A79-863A-7DB080CB1F19}",
+	"id": "{E41B0744-9AB6-4A79-863A-7DB080CB1F15}",
 	"name": "HTMLVisuTestDuckCounters",
 	"type": 3,
 	"vendor": "",
@@ -10,5 +10,5 @@
 	"parentRequirements": [],
 	"childRequirements": [],
 	"implemented": [],
-	"prefix": "HVT"
+	"prefix": "Test"
 }
