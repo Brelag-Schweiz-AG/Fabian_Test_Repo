@@ -7,11 +7,14 @@ declare(strict_types=1);
 		{
 			//Never delete this line!
 			parent::Create();
+
 			$this->RegisterVariableBoolean('Switch', 'Switch');
 			$this->EnableAction('Switch');
+			
+			$this->SetVisualizationType(1);
 		}
 
-		$this->SetVisualizationType(1);
+		
 
 		public function Destroy()
 		{
