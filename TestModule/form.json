@@ -1,0 +1,11 @@
+{
+    "elements": [
+        {
+            "type": "SelectClock",
+            "name": "Clock",
+            "caption": "Clock",
+            "validVariableTypes": [1,2]
+        }
+        
+    ]
+}
