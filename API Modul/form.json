@@ -1,7 +1,7 @@
 {
     "elements": [
-        {"type": "ValidationTypeBox", "name": "URL", "caption": "URL"},
-        {"type": "ValidationTypeBox", "name": "Username", "caption": "Username"},
-        {"type": "ValidationTypeBox", "name": "PW", "caption": "Password"}
+        {"type": "ValidationTxteBox", "name": "URL", "caption": "URL"},
+        {"type": "ValidationTextBox", "name": "Username", "caption": "Username"},
+        {"type": "ValidationTextBox", "name": "PW", "caption": "Password"}
     ]  
 }
