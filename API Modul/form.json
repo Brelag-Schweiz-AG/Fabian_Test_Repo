@@ -1,6 +1,6 @@
 {
     "elements": [
-        {"type": "ValidationTxteBox", "name": "URL", "caption": "URL"},
+        {"type": "ValidationTextBox", "name": "URL", "caption": "URL"},
         {"type": "ValidationTextBox", "name": "Username", "caption": "Username"},
         {"type": "ValidationTextBox", "name": "PW", "caption": "Password"}
     ]  
