@@ -1,6 +1,6 @@
 <?php
 
-	class APIModul extends IPSModule
+	class API extends IPSModule
 	{
 		public function Create()
 		{
