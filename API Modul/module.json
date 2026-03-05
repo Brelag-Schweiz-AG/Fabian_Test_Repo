@@ -1,0 +1,12 @@
+{
+    "id": "{CBA4E7EF-8329-B50B-718C-99F61C56F60F}",
+    "name": "API Modul",
+    "type": 3,
+    "vendor": "",
+    "aliases": ["API"],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "BRELAG",
+    "url": ""
+}
