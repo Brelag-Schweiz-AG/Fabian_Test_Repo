@@ -1,9 +1,9 @@
 {
     "id": "{CBA4E7EF-8329-B50B-718C-99F61C56F60F}",
-    "name": "API Modul",
+    "name": "API",
     "type": 3,
-    "vendor": "",
-    "aliases": ["API"],
+    "vendor": "BRELAG Schweiz AG",
+    "aliases": ["Brelag API"],
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],

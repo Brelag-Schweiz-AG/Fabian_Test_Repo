@@ -1,5 +1,7 @@
 {
-    "elements": [],
-    "actions": [],
-    "status": []
+    "elements": [
+        {"type": "ValidationTypeBox", "name": "URL", "caption": "URL"},
+        {"type": "ValidationTypeBox", "name": "Username", "caption": "Username"},
+        {"type": "ValidationTypeBox", "name": "PW", "caption": "Password"}
+    ]  
 }

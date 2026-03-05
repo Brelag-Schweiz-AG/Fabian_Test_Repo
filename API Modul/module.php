@@ -19,5 +19,8 @@ declare(strict_types=1);
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
+			$this-> RegisterPropertyString("URL", "");
+			$this-> RegisterPropertyString("Username", "");
+			$this-> RegisterPropertyString("PW", "");
 		}
 	}
