@@ -23,12 +23,14 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();	
+
+			// Eingegebene Werte im form speichern
 			$url = $this->ReadPropertyString("URL");
 			$username = $this->ReadPropertyString("Username");
 			$pw = $this->ReadPropertyString("PW");
 		}
 
-		public function SetValueOverAPI($targetID, $value){
+		public function SetValueOverAPI(int $targetID, int $value){
 			$token[] = $username . ":" . $pw;
 
 			$curl = curl_init($url);
@@ -41,7 +43,7 @@
 			{
 			"jsonrpc": "2.0",
 			"method": "SetValue",
-			"params": [$id, $value],
+			"params": [$targetID, $value],
 			"id": $timestamp
 			}
 			DATA;
