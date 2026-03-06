@@ -1,10 +1,10 @@
 {
     "elements": [
-        {"type": "Label", "label":"URL"},
+        {"type": "Label", "label":""},
         {"type": "ValidationTextBox", "name": "URL", "caption": "URL"},
-        {"type": "Label", "label":"Benutzername"},
+        {"type": "Label", "label":""},
         {"type": "ValidationTextBox", "name": "Username", "caption": "Benutzername"},
-        {"type": "Label", "label":"Passwort"},
+        {"type": "Label", "label":""},
         {"type": "PasswordTextBox", "name": "PW", "caption": "Passwort"}
     ]  
 }

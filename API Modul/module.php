@@ -23,12 +23,38 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();	
-			$Url = $this->ReadPropertyString("URL");
-			$Username = $this->ReadPropertyString("Username");
-			$Pw = $this->ReadPropertyString("PW");
+			$url = $this->ReadPropertyString("URL");
+			$username = $this->ReadPropertyString("Username");
+			$pw = $this->ReadPropertyString("PW");
 		}
 
 		public function SetValueOverAPI($targetID, $value){
+			$token[] = $username . ":" . $pw;
+
+			$curl = curl_init($url);
+			curl_setopt($curl, CURLOPT_HTTPHEADER,$token);
+			curl_setopt($curl, CURLOPT_URL, $url);
+			curl_setopt($curl, CURLOPT_POST, true);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+			$data = <<<DATA
+			{
+			"jsonrpc": "2.0",
+			"method": "SetValue",
+			"params": [$id, $value],
+			"id": $timestamp
+			}
+			DATA;
+
+			curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+			$resp = curl_exec($curl);
+			//print_r($resp);
+
+			curl_close($curl);
+
+			$jsonD = json_decode($resp);
+			print_r($jsonD);
 
 		}
 
@@ -38,9 +64,5 @@
 
 		public function RequestActionOverAPI($targetID, $value){
 
-		}
-
-		function createEnquieryForAPICall($targetID, $value, $isGet){
-			
 		}
 	}
