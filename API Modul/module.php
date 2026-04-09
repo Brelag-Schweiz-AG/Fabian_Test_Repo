@@ -75,6 +75,7 @@
 
 			$resp = curl_exec($curl);
 			$decoded = json_decode($resp, true);
+			print($decoded);
 			$result = $decoded["result"];
 			SetValue($writeToTargetID, $result);
 		}
