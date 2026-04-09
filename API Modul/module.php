@@ -2,6 +2,7 @@
 
 	class API extends IPSModule
 	{
+	
 		public function Create()
 		{
 			//Never delete this line!
@@ -12,7 +13,8 @@
 			$this->RegisterPropertyString("Username", "");
 			$this->RegisterPropertyString("PW", "");
 		
-
+		}
+		
 		public function Destroy()
 		{
 			//Never delete this line!
