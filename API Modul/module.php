@@ -59,7 +59,7 @@
 			$resp = curl_exec($curl);
 		}
 
-		public function GetValueOverAPI($readValueFromAPI, $writeToTargetID){
+		public function GetValueOverAPI(int $readValueFromAPI, int $writeToTargetID){
 			$timestamp = time();
 			$curl = $this->createCredentials();
 			$data = <<<DATA
@@ -75,7 +75,8 @@
 
 			$resp = curl_exec($curl);
 			$decoded = json_decode($resp, true);
-			print_r($decoded);
+
+			//print_r($decoded);
 			$result = $decoded["result"];
 			SetValue($writeToTargetID, $result);
 		}
