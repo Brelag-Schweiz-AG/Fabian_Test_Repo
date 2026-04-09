@@ -31,7 +31,8 @@
 		}
 
 		public function SetValueOverAPI(int $targetID, int $value){
-			$token[] = $username . ":" . $pw;
+			$token[] = "Authorization: Basic " . base64_encode($username . ":" . $pw);
+			$timestamp = time();
 
 			$curl = curl_init($url);
 			curl_setopt($curl, CURLOPT_HTTPHEADER,$token);
