@@ -27,20 +27,24 @@
 			parent::ApplyChanges();				
 		}
 
-		public function SetValueOverAPI(int $targetID, int $value){
+		private function createCredentials() {
 			$url = $this->ReadPropertyString("URL");
 			$username = $this->ReadPropertyString("Username");
 			$pw = $this->ReadPropertyString("PW");
 
 			$token[] = "Authorization: Basic " . base64_encode($username . ":" . $pw);
-			$timestamp = time();
-
+	
 			$curl = curl_init($url);
 			curl_setopt($curl, CURLOPT_HTTPHEADER,$token);
 			curl_setopt($curl, CURLOPT_URL, $url);
 			curl_setopt($curl, CURLOPT_POST, true);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+			return $curl;
+		}
 
+		public function SetValueOverAPI(int $targetID, int $value){
+			$timestamp = time();
+			$curl = $this->createCredentials();
 			$data = <<<DATA
 			{
 			"jsonrpc": "2.0",
@@ -53,16 +57,24 @@
 			curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
 			$resp = curl_exec($curl);
-			//print_r($resp);
-
-			curl_close($curl);
-
-			$jsonD = json_decode($resp);
-			print_r($jsonD);
-
 		}
 
 		public function GetValueOverAPI($targetID){
+			$timestamp = time();
+			$curl = $this->createCredentials();
+			$data = <<<DATA
+			{
+			"jsonrpc": "2.0",
+			"method": "GetValue",
+			"params": [$targetID],
+			"id": $timestamp
+			}
+			DATA;
+
+			curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+			$resp = curl_exec($curl);
+
 
 		}
 
