@@ -14,7 +14,7 @@
 			$this->RegisterPropertyString("PW", "");
 		
 		}
-		
+
 		public function Destroy()
 		{
 			//Never delete this line!
@@ -24,15 +24,14 @@
 		public function ApplyChanges()
 		{
 			//Never delete this line!
-			parent::ApplyChanges();	
-
-			// Eingegebene Werte im form speichern
-			$url = $this->ReadPropertyString("URL");
-			$username = $this->ReadPropertyString("Username");
-			$pw = $this->ReadPropertyString("PW");
+			parent::ApplyChanges();				
 		}
 
 		public function SetValueOverAPI(int $targetID, int $value){
+			$url = $this->ReadPropertyString("URL");
+			$username = $this->ReadPropertyString("Username");
+			$pw = $this->ReadPropertyString("PW");
+
 			$token[] = "Authorization: Basic " . base64_encode($username . ":" . $pw);
 			$timestamp = time();
 
