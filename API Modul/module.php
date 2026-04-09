@@ -55,11 +55,10 @@
 			DATA;
 
 			curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
 			$resp = curl_exec($curl);
 		}
 
-		public function GetValueOverAPI(int $readValueFromAPI /*, int $writeToTargetID*/){
+		public function GetValueOverAPI(int $readValueFromAPI, int $writeToTargetID){
 			$timestamp = time();
 			$curl = $this->createCredentials();
 			$data = <<<DATA
@@ -77,13 +76,26 @@
 			$decoded = json_decode($resp, true);
 
 			//print_r($decoded);
-			$result = $decoded["result"];
-			return $result;
-			
-			//SetValue($writeToTargetID, $result);
+			$result = $decoded["result"];		
+			SetValue($writeToTargetID, $result);
 		}
 
-		public function RequestActionOverAPI($targetID, $value){
+		public function RequestActionOverAPI(int $targetID, $value) {
+			$curl = this-> createCredentials();
+			$timestamp = time();
 
+			$data = <<<DATA
+			{
+			"jsonrpc": "2.0",
+			"method": "RequestAction",
+			"params": [$targetID, $value],
+			"id": $timestamp
+			}
+			DATA;
+
+			curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+			$resp = curl_exec($curl);
+			print_r($resp);
 		}
 	}
