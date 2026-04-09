@@ -66,7 +66,7 @@
 			{
 			"jsonrpc": "2.0",
 			"method": "GetValue",
-			"params": [$readValueFromAPI, $writeToTargetID],
+			"params": [$readValueFromAPI],
 			"id": $timestamp
 			}
 			DATA;
