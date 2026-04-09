@@ -81,7 +81,7 @@
 		}
 
 		public function RequestActionOverAPI(int $targetID, $value) {
-			$curl = this->createCredentials();
+			$curl = $this->createCredentials();
 			$timestamp = time();
 
 			$data = <<<DATA
