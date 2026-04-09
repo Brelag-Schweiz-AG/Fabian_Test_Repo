@@ -74,7 +74,7 @@
 			curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
 			$resp = curl_exec($curl);
-			$decoded = json_decode($resp);
+			$decoded = json_decode($resp, true);
 			$result = $decoded["result"];
 			SetValue($writeToTargetID, $result);
 		}
