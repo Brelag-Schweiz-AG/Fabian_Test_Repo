@@ -74,7 +74,7 @@
 			curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
 			$resp = curl_exec($curl);
-
+			print($resp);
 
 		}
 
