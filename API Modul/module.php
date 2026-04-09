@@ -8,10 +8,10 @@
 			parent::Create();
 
 			//Eigenschaften speichern
-			$this-> RegisterPropertyString("URL", "");
-			$this-> RegisterPropertyString("Username", "");
-			$this-> RegisterPropertyString("PW", "");
-		}
+			$this->RegisterPropertyString("URL", "");
+			$this->RegisterPropertyString("Username", "");
+			$this->RegisterPropertyString("PW", "");
+		
 
 		public function Destroy()
 		{
